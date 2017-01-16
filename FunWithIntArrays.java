@@ -124,6 +124,17 @@
  * Explanation: In the incorrect code, j has no limit and therefore will go out
  *              of bounds. Fixed limit so j has to be less than 
  *              result.length - 1 - i.
+ *
+ *
+ * Logic Error- Incorrect output
+ *
+ * Incorrect: int temp = result[j];
+ *
+ * Fix: int temp = result[j + 1];
+ *
+ * Explanation: The incorrect code is setting the wrong value for temp as temp
+ *              supposed to be set as result[j + 1] so result[j] can be set to
+ *              it.
  */ 
  
 public class FunWithIntArrays {
@@ -216,7 +227,7 @@ public class FunWithIntArrays {
    for (int j = 0; j < result.length - 1 - i; j++) {
     if (result[j] > result[j + 1]) {
      //swapping result[j] and result[j+1]
-     int temp = result[j];
+     int temp = result[j + 1];
      result[j + 1] = result[j];
      result[j] = temp;
     }

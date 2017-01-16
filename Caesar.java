@@ -5,9 +5,13 @@
 import java.io.*;
 import java.util.*;
 
-/** Your header comment goes here.
- * Be sure to include your name, cse account name, and the date 
- * */
+/*
+ *  Name: Luis Calona
+ *  Login: cs8bwaam
+ *  Date: January 15, 2017
+ *  File: Caesar.java
+ *  Sources of Help: None
+ */
 public class Caesar {
  // Complete the methods below.  Be sure to add header
  // comments for each. You may (and should) also write additional
@@ -37,29 +41,79 @@ public class Caesar {
  // in good shape.
 
 
- public static String encrypt(String s, int rotation) {
-  // Complete this method
-  // letters are between 65 and 90 (Upper Case) and 97 and 122 (Lower Case)
-  return "";
- }
- public static String decrypt(String s, int rotation) {
-  // Complete this method
-  return "";
- }
+    public static String encrypt(String s, int rotation) 
+    {
+        // Complete this method
+        // letters are between 65 and 90 (Upper Case) and 97 and 122 (Lower 
+        // Case)
 
- private static char letterOperation(char a, int rotation) {
-  //Complete this method
-  return '0';
- }
+        return "";
+    }
 
- public static String encryptTwo(String s, int rotation) {
-  // Complete this method
-  // letters are between 65 and 90 (Upper Case) and 97 and 122 (Lower Case)
-  return "";
- }
- public static String decryptTwo(String s, int rotation) {
-  // Complete this method
-  return "";
- }
+    public static String decrypt(String s, int rotation) 
+    {
+    
+        return "";
+    }
+
+    private static char letterOperation(char letter, int rotation) 
+    {
+        // Checks if char is a letter
+        if ( Character.isLetter(letter) )
+        {
+            // Takes care of case when rotation is negative
+            rotation = Math.abs(rotation % 26);
+
+            // Checks if char is upper case
+            if ( Character.isUpperCase(letter) )
+            {
+                /* Rotation formula- "wraps" around when the new ASCII value 
+                 * exceeds last letter in the alphabet ('Z'), which is ASCII 
+                 * value 90, or index 25 in an array of characters 'A' to 'Z' 
+                 * from index 0 to 25; formula subtracts 'A' (value 65) to 
+                 * reset index to zero, makes sure char + rotation does not 
+                 * exceed 26 letters of alphabet, then adds back 'A' to get 
+                 * the correct value
+                 */
+                return (char)( ( ( (letter + rotation ) - 'A' ) % 26 ) + 'A' );
+               
+            }
+
+            else // If char is lower case
+            {
+                // Converts to upper case for rotation
+                letter = Character.toUpperCase(letter);
+
+                // Rotation formula for upper case characters
+                char newLetter =
+                    (char)( ( ( (letter + rotation ) - 'A' ) % 26 ) + 'A' );
+
+                // Converts char back to lower case and then returns it
+                return Character.toLowerCase(newLetter);
+            }
+        }
+
+        else // If char is not a letter
+        {
+            // Return original char
+            return letter;
+        }
+    }
+
+    public static String encryptTwo(String s, int rotation) 
+    {
+        // Complete this method
+        // letters are between 65 and 90 (Upper Case) and 97 and 122 (Lower 
+        // Case)
+
+        return "";
+    }
+
+    public static String decryptTwo(String s, int rotation) 
+    {
+        // Complete this method
+
+        return "";
+    }
 
 }

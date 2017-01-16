@@ -7,6 +7,9 @@ you may write your testers however you want as long as they actually
 check the functionality of the code and allow you to determine the
 correctness of it.
 */
+
+import java.util.Arrays;
+
 public class Testers {
     String alwaysPrint;
     
@@ -23,7 +26,6 @@ public class Testers {
      */
     public static void test_p1()
     {
-        
         // Normal test case when there is an anagram
         String[] testIn1 = {"abc", "bc", "c"};
         String testIn2 = "bac";
@@ -79,7 +81,8 @@ public class Testers {
             System.out.println("NullPointerException Caught");
             System.out.println("\n" + "\n");
         }
-        // Contradiction
+        // ***Contradiction***
+        // Throws NullPointerException
 
         try
         {
@@ -95,7 +98,8 @@ public class Testers {
             System.out.println("NullPointerException Caught");
             System.out.println("\n" + "\n");
         }
-        // Contradiction
+        // ***Contradiction***
+        // Throws NullPointerException
 
         try
         {
@@ -111,7 +115,8 @@ public class Testers {
             System.out.println("NullPointerException Caught");
             System.out.println("\n" + "\n");
         }
-        // Contradiction
+        // ***Contradiction***
+        // Throws NullPointerException
 
         // Testing Empty String Array
         String[] testEmptyStrArr = {"", " ", "  "};
@@ -132,11 +137,116 @@ public class Testers {
         ReadDocumentation.p1(testIn1, testIn4);
         System.out.println("\n" + "\n");
         // No Contradiction
-
-   
-
     }
 
+    /**
+     *
+     */
+    public static void test_p2()
+    {
+        Integer[] testIn1, testIn2, expected;
+        int n = 1;
+
+        // Test Case 1: Normal test case
+        testIn1 = new Integer[] {1, 2};
+        testIn2 = new Integer[] {2, 0};
+        expected = new Integer[] {3, 2};
+        Integer[] actual1 = ReadDocumentation.p2(testIn1, testIn2);
+        if ( Arrays.equals(expected, actual1) )
+        {
+            System.out.println("Test " + n + ": Passed");
+        }
+        else 
+        {
+            System.out.println("Test " + n + ": Failed");
+        }
+        n++;
+        // No Contradiction
+
+        // Test Case 2: Testing negative integers
+        testIn1 = new Integer[] {-1, -2};
+        testIn2 = new Integer[] {2, 0};
+        expected = new Integer[] {1, -2};
+        Integer[] actual2 = ReadDocumentation.p2(testIn1, testIn2);
+        if ( Arrays.equals(expected, actual2) )
+        {
+            System.out.println("Test " + n + ": Passed");
+        }
+        else 
+        {
+            System.out.println("Test " + n + ": Failed");
+        }
+        n++;
+        // No Contradiction
+
+        // Test Case 3: Another normal test case
+        testIn1 = new Integer[] {0, 6};
+        testIn2 = new Integer[] {3, 4};
+        expected = new Integer[] {4, 0};
+        Integer[] actual3 = ReadDocumentation.p2(testIn1, testIn2);
+        if ( Arrays.equals(expected, actual3) )
+        {
+            System.out.println("Test " + n + ": Passed");
+        }
+        else 
+        {
+            System.out.println("Test " + n + ": Failed");
+        }
+        n++;
+        // No Contradiction
+
+        // Test Case 4: Another seemingly normal test case
+        testIn1 = new Integer[] {6, 2};
+        testIn2 = new Integer[] {4, 0};
+        expected = new Integer[] {1, 0, 2};
+        try
+        {
+            Integer[] actual4 = ReadDocumentation.p2(testIn1, testIn2);
+        }
+        catch ( ArrayIndexOutOfBoundsException e )
+        {
+            System.out.print("Test " + n + ": Failed");
+            System.out.println("- Caught ArrayIndexOutOfBoundsException");
+        }
+        n++;
+        // ***Contradiction***
+        // Throws ArrayIndexOutOfBoundsException
+
+        // Test Case 5: Testing different sized arrays
+        testIn1 = new Integer[] {6};
+        testIn2 = new Integer[] {3, 0};
+        expected = new Integer[] {3, 6};
+        try
+        {
+            Integer[] actual5 = ReadDocumentation.p2(testIn1, testIn2);
+        }
+        catch ( ArrayIndexOutOfBoundsException e )
+        {
+            System.out.print("Test " + n + ": Failed");
+            System.out.println("- Caught ArrayIndexOutOfBoundsException");
+        }
+        n++;
+        // ***Contradiction***
+        // Throws ArrayIndexOutOfBoundsException
+    }
+
+    public static void print(java.lang.Object[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println("");
+    }
+    
+    public static void test_p3()
+    {
+        int min, max;
+
+        min = 65;
+        max = 68;
+        print( ReadDocumentation.p3(min, max) );
+    }
 
     /* TODO 
     */
@@ -146,7 +256,8 @@ public class Testers {
         /** TODO Put method calls go here */ 
 
         Testers.test_p1();
-
+        Testers.test_p2();
+        Testers.test_p3();
 
 
 
