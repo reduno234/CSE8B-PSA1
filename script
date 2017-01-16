@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Timing for encryptTwo method:"
+time java CaesarComparer encryptTwo
+echo "Timing for encrypt method:"
+time java CaesarComparer encrypt
