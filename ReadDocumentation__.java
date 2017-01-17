@@ -66,19 +66,12 @@ public class ReadDocumentation {
     /** TODO **Documentation as follows:** */
 
     /* TODO
-     * Tip:
-     *
      * Static method: call this problem with the following Java code:
      * ReadDocumentation.p1(x,y); //Static call to p1
      *
      * // Where x is a String[] and y is a String.
      *
-     ******************************************************************
-     * 
-     * About p1:
-     *
-     * This method takes in a String array, and a target String. It prints 
-     * out all Strings in the array that are anagrams of the target String.
+     * This method takes a 
      *
      * Input: s is a String[], and t is a String.
      * Output: Nothing
@@ -125,7 +118,7 @@ public class ReadDocumentation {
      *
      * For example: Index 5 will be 
      * (5 + (5 % 3)) == (5 + 2) == 7
-     * so the String could be "#######". 
+     * so the String could be "########". 
      * (The character is not necessarily #, as explained by the following.)
      *
      * But this example will never happen because the lowest allowable 
@@ -139,22 +132,14 @@ public class ReadDocumentation {
      * Input: int min, int max
      * Output: String[] containing Strings of variable length whose chars 
      * are determined by the index. 
-     *
-     * One more example
-     * min == 66, max == 68
-     *
-     * returned is a String array where 
-     * the Objects at index 0 through index 65 are empty
-     * the Objects at index 66 through 68 contain strings
-     * These Strings are produced using the above algorithm.
-     *
      */
     //public static String[] p3 (int min, int max) {}
 
 
 
 
-hello! this file is not meant to be compilable! 
+
+
 
 /** End Documentation and Usable Portion of the File */ 
 
