@@ -10,32 +10,6 @@ import java.util.*;
  */
 
 public class Caesar {
- // Complete the methods below.  Be sure to add header
- // comments for each. You may (and should) also write additional
- // helper methods.  Be sure to make the helper methods private and include
- // header comments for each.
-
- // Although you will not be graded on style this week, you should follow
- // these basic style guidelines nonetheless.   You will be graded on this
- // in weeks to come, so start to practice now.
-
- // Use proper indenting: Indent each block of code (e.g., method body,
- //   loop body.  Line up the lines in the block so that they are all
- //   indented to the same degree.  See examples of this in the book
- //   and in the code below.
- // Use descriptive variable names: The names of your variables should
- //   describe the data they hold.  Almost always, your variable names
- //   should be words (or abbreviations), not single letters.
- // Write short methods: Break your methods up into submethods if they
- //   are getting too complicated or long.  Generally your methods
- //   shouldn't get too much longer than about 20 lines of code (give or take)
- // Write short lines: Each line of code should be no longer than 80
- //   characters, so it can fit in a reasonable size window.  There's a
- //   column number in both vim and emacs.
- //
- // We'll start with these, as these are the most important.  We may add
- // to this list later in the term, but if you do all of the above you're
- // in good shape.
 
     /**
      *
@@ -109,10 +83,10 @@ public class Caesar {
      *  exceed 26 letters of alphabet, then adds back 'A' to get 
      *  the correct value
      */
-    public static char rotate(char letter, int rotation)
+    private static char rotate(char letter, int rotation)
     {
         // Takes care of case lower edge case
-        if( (Character.toUpperCase(letter) + rotation) < 65 )
+        if ( (Character.toUpperCase(letter) + rotation) < 65 )
         {
             // "Wraps" around backwards, right to left, starting from 'Z'
             return (char)( ( 26 + (rotation % 26) ) + letter );

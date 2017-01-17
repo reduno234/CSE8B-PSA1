@@ -195,7 +195,7 @@ public class Testers {
         n++;
         // No Contradiction
 
-        // Test Case 4: Another seemingly normal test case
+        // Test Case 4: A seemingly normal test case
         testIn1 = new Integer[] {6, 2};
         testIn2 = new Integer[] {4, 0};
         expected = new Integer[] {1, 0, 2};
@@ -228,9 +228,33 @@ public class Testers {
         n++;
         // ***Contradiction***
         // Throws ArrayIndexOutOfBoundsException
+
+        // Test Case 6:  
+        testIn1 = new Integer[] {-6, 3};
+        testIn2 = new Integer[] {3, 9};
+        expected = new Integer[] {-2, 4};
+        Integer[] actual6 = ReadDocumentation.p2(testIn1, testIn2);
+        if ( Arrays.equals(expected, actual6) )
+        {
+            System.out.println("Test " + n + ": Passed");
+        }
+        else 
+        {
+            System.out.print("Test " + n + ": Failed");
+            System.out.println("- Actual and Expected values do not match");
+            System.out.print("    Actual: "); 
+            Testers.print(actual6);
+            System.out.print("    Expected: " );
+            Testers.print(expected);
+        }
+        n++;
+        // ***Contradiction***
     }
 
-    public static void print(java.lang.Object[] array)
+    /**
+     *
+     */
+    private static void print(java.lang.Object[] array)
     {
         for (int i = 0; i < array.length; i++)
         {
@@ -239,27 +263,100 @@ public class Testers {
         System.out.println("");
     }
     
+    /**
+     *
+     */
     public static void test_p3()
     {
-        int min, max;
+        int max, min, index, calculatedIndex, n;
+        String expected, actual;
 
         min = 65;
-        max = 68;
-        print( ReadDocumentation.p3(min, max) );
+        max = 115;
+
+        String[] testArr = ReadDocumentation.p3(min, max);
+
+        n = 1;
+
+        // Test 1
+        index = 65;
+        calculatedIndex = (index + (index % 3));        
+        expected = 
+            Testers.makeString( (char)calculatedIndex, calculatedIndex);
+        actual = testArr[index];
+
+        if ( expected.equals(actual) )
+        {
+            System.out.println("Test " + n + ": Passed");
+        }
+        else
+        {
+            System.out.print("Test " + n + ": Failed");
+            System.out.println("- Actual and Expected values do not match");
+            System.out.println("    Actual: " + actual);
+            System.out.println("        -Length: " + actual.length() );
+            System.out.println("    Expected: " + expected);
+            System.out.println("        -Length: " + expected.length() );
+        }
+        n++;
+        // ***Contradiction***
+        // Values do not match
+
+        //Test 2
+        index = 115;
+        calculatedIndex = (index + (index % 3));        
+        expected = 
+            Testers.makeString( (char)calculatedIndex, calculatedIndex);
+        
+        try
+        {
+            actual = testArr[index];
+
+            if ( expected.equals(actual) )
+            {
+                System.out.println("Test " + n + ": Passed");
+            }
+            else
+            {
+                System.out.print("Test " + n + ": Failed");
+                System.out.println(
+                        "- Actual and Expected values do not match");
+                System.out.println("    Actual: " + actual);
+                System.out.println("        -Length: " + actual.length() );
+                System.out.println("    Expected: " + expected);
+                System.out.println("        -Length: " + expected.length() );
+            }
+        }
+       catch ( ArrayIndexOutOfBoundsException e)
+       {
+           System.out.print("Test " + n + ": Failed");
+           System.out.println("- Caught ArrayIndexOutOfBoundsException");
+       }
+        n++;
+        // ***Contradiction***
+        // ArrayIndexOutOfBoundsException
+
     }
 
-    /* TODO 
-    */
+    /**
+     *
+     */
+    private static String makeString(char letter, int length)
+    {
+        String letters = "";
+        for (int i = 0; i < length; i++)
+        {
+            letters = letters + letter;
+        }
+        return letters;
+    }
+
     public static void main (String[] args) {
         Testers testers = new Testers();
 
-        /** TODO Put method calls go here */ 
-
+        // Run testers
         Testers.test_p1();
         Testers.test_p2();
         Testers.test_p3();
-
-
-
     }
 }

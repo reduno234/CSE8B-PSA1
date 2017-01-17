@@ -1,0 +1,26 @@
+1. 
+    Run 1:
+        Timing for encryptTwo method:
+        real    0m1.248s
+    
+        Timing for encrypt method:
+        real    0m7.430s
+
+    Run 2:
+        Timing for encryptTwo method:
+        real    0m0.785s
+
+        Timing for encrypt method:
+        real    0m7.861s
+
+    Run 3:
+        Timing for encryptTwo method:
+        real    0m0.762s
+
+        Timing for encrypt method:
+        real    0m7.752s
+
+
+2. 
+
+3. 

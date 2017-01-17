@@ -1,0 +1,11 @@
+A) Section A contains the fields or member variables of the Class, Class1. They hold the data for each instance of the class. 
+
+B) Section B contains a constructor for the Class. The constructor creates an instance or object of the class, and initializes the member variables.
+
+C) Section C contains a method definition of the class. A method defines what objects of the class can do. 
+
+D) Section D contains the parameters of the method Method1 in Class1. These parameters can be passed inside the method to be used.
+
+E) Section E contains the arguments of the method call in the main method. These arguments are fed into the method call during runtime.
+
+F) Section F contains the method call of Method1 in the main method. This section is matched up with section C because of the method's signature. The signature is the method name and number of parameters and types. When a method is called in the main method, Java matches it up with the same method signature in the Class to correctly identify it and connect the two.
